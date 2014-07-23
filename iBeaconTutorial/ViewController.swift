@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var beacons: [CLBeacon]
+    var beacons: [CLBeacon] = []
     @IBOutlet var tableView: UITableView
     
     override func viewDidLoad() {
@@ -29,8 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 extension ViewController: UITableViewDataSource {
     func tableView(tableVIew: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        if(beacons && beacons.count > 0) {
-            return beacons!.count
+        if(beacons.count > 0) {
+            return beacons.count
         } else {
             return 0
         }
@@ -44,7 +44,7 @@ extension ViewController: UITableViewDataSource {
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
         }
         
-        let beacon:CLBeacon = beacons![indexPath.row]
+        let beacon:CLBeacon = beacons[indexPath.row]
         var proximityLabel:String! = ""
         
         switch beacon.proximity {
@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource {
             "Minor: \(beacon.minor.integerValue), " +
             "RSSI: \(beacon.rssi as Int), " +
             "UUID: \(beacon.proximityUUID.UUIDString)"
-        cell!.detailtextLabel.text = detailLabel
+        cell!.detailTextLabel.text = detailLabel
         
         return cell
     }

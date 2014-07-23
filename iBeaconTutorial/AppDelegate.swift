@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         
         let uuidString = ""
-        let beaconIdentifier = ""
+        let beaconIdentifier = "testBeaconsYo"
         let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID, identifier: beaconIdentifier)
         
@@ -78,7 +78,7 @@ extension AppDelegate: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         
         let viewController:ViewController = window!.rootViewController as ViewController
-        viewController.beacons = beacons as [CLBeacon]?
+        viewController.beacons = beacons as [CLBeacon]!
         viewController.tableView.reloadData()
         
         NSLog("didRangeBeacons")
