@@ -12,6 +12,7 @@
 		DE0F49AB197F5D360098C96D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0F49A9197F5D360098C96D /* Main.storyboard */; };
 		DE0F49AD197F5D360098C96D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0F49AC197F5D360098C96D /* Images.xcassets */; };
 		DE0F49B9197F5D360098C96D /* iBeaconTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F49B8197F5D360098C96D /* iBeaconTutorialTests.swift */; };
+		DE0F49C3197F5D7D0098C96D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0F49C2197F5D7D0098C96D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		DE0F49B2197F5D360098C96D /* iBeaconTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0F49B7197F5D360098C96D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE0F49B8197F5D360098C96D /* iBeaconTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconTutorialTests.swift; sourceTree = "<group>"; };
+		DE0F49C2197F5D7D0098C96D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0F49C3197F5D7D0098C96D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +60,7 @@
 		DE0F4997197F5D360098C96D = {
 			isa = PBXGroup;
 			children = (
+				DE0F49C2197F5D7D0098C96D /* CoreLocation.framework */,
 				DE0F49A2197F5D360098C96D /* iBeaconTutorial */,
 				DE0F49B5197F5D360098C96D /* iBeaconTutorialTests */,
 				DE0F49A1197F5D360098C96D /* Products */,
@@ -158,6 +162,11 @@
 				TargetAttributes = {
 					DE0F499F197F5D360098C96D = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					DE0F49B1197F5D360098C96D = {
 						CreatedOnToolsVersion = 6.0;
@@ -326,6 +335,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBeaconTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -337,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = iBeaconTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
